@@ -16,6 +16,8 @@
     <form id="uploadForm" method="post" enctype="multipart/form-data">
         <div class="upload-area">
             <input type="file" name="doc" required /><br /><br />
+              <label for="max_downloads">Number of allowed downloads:</label>
+<input type="number" name="max_downloads" id="max_downloads" min="1" value="1" required>  <br /><br />
             <label>Link Validity:</label><br />
             <input type="number" name="hours" min="0" placeholder="Hours" style="width: 80px" />
             <input
@@ -26,7 +28,7 @@
                 placeholder="Minutes"
                 style="width: 80px"
             /><br />
-            <small>Leave both empty for no expiry (valid until first use only)</small><br /><br />
+            <small>(Leave both empty for no expiry)</small><br /><br />
             <button type="submit">Upload</button>
         </div>
     </form>

@@ -17,11 +17,16 @@
     <input type="text" value="{{ link }}" readonly id="shareLink" />
     <button id="copyBtn">Copy Link</button>
 
-    <div class="file-info">
-        <div>File: <span>{{ file_info['filename'] }}</span></div>
-        <div>Size: <span>{{ file_info['size'] }} KB</span></div>
-        <div>Type: <span>{{ file_info['type'] }}</span></div>
-    </div>
+
+<div class="file-info">
+    <div>Downloads Remaining: <span>{{ remaining }}</span></div>
+    <div>Time Remaining: <span>{{ time_remaining }}</span></div>
+    <br />
+    <div>File: <span>{{ file_info['filename'] }}</span></div>
+    <div>Size: <span>{{ file_info['size'] }} KB</span></div>
+    
+</div>
+
 
     <div id="toast">Copied to clipboard!</div>
 
