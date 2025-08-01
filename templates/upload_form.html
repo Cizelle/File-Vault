@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FileVault - Upload Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header class="fv-header">
+        <h2>FileVault</h2>
+    </header>
+
+    <h1>Upload file, to generate link</h1>
+
+    <form id="uploadForm" method="post" enctype="multipart/form-data">
+        <div class="upload-area">
+            <input type="file" name="doc" required /><br /><br />
+            <label>Link Validity:</label><br />
+            <input type="number" name="hours" min="0" placeholder="Hours" style="width: 80px" />
+            <input
+                type="number"
+                name="minutes"
+                min="0"
+                max="59"
+                placeholder="Minutes"
+                style="width: 80px"
+            /><br />
+            <small>Leave both empty for no expiry (valid until first use only)</small><br /><br />
+            <button type="submit">Upload</button>
+        </div>
+    </form>
+
+    <div id="progressContainer" style="display: none; margin: 20px auto; max-width: 400px;">
+        <div id="progressBar"></div>
+        <div id="progressText"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+</body>
+</html>

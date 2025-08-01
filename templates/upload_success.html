@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FileVault - Upload Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <header class="fv-header">
+        <h2>FileVault</h2>
+    </header>
+
+    <h1>Copy link to share</h1>
+
+    <p>Share this unique, one-time download link:</p>
+    <input type="text" value="{{ link }}" readonly id="shareLink" />
+    <button id="copyBtn">Copy Link</button>
+
+    <div class="file-info">
+        <div>File: <span>{{ file_info['filename'] }}</span></div>
+        <div>Size: <span>{{ file_info['size'] }} KB</span></div>
+        <div>Type: <span>{{ file_info['type'] }}</span></div>
+    </div>
+
+    <div id="toast">Copied to clipboard!</div>
+
+    <script src="{{ url_for('static', filename='upload_success.js') }}"></script>
+</body>
+</html>
